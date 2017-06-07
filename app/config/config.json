@@ -1,0 +1,28 @@
+{
+	"db": {
+		"username": "heroku_l2sh3rqr",
+		"password": "kh61lmnt0g4fp1gq8dvhects85",
+		"host": "ds151941.mlab.com",
+		"port": "51941",
+		"name": "heroku_l2sh3rqr"
+
+	},
+	"sessionSecret": "9sC[9a?M%:==~>2afaKl[i|q9t9rg1toD$s^29G9G'@)`er'WWq<!ME,^9D[@}",
+	"facebook": {
+		"clientID": "121162605126834",
+		"clientSecret": "52fb3d5f216ba69a93b607eb18fbb18a",
+		"callbackURL": "/auth/facebook/callback",
+		"profileFields": ["id", "displayName", "photos"]
+	},
+	"twitter": {
+		"consumerKey": "H6itz9oTMfVncdk5Fxw5rlEb7",
+		"consumerSecret": "pzDJwjRiod3UmCMrGc1i5QS9uJFugwMu1oM7Nodlvuw4rcsLan",
+		"callbackURL": "/auth/twitter/callback",
+		"profileFields": ["id", "displayName", "photos"]
+	},
+	"redis": {
+		"host": "ec2-34-206-77-235.compute-1.amazonaws.com",
+		"port": 41999,
+		"password": "p22fad4700c45fa29f34c04f1101c818cd68c835161a09da4beb6cf4a33334cfb"
+	}
+}
