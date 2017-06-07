@@ -22,7 +22,7 @@ var ioEvents = function(io) {
 				if(room){
 					socket.emit('updateRoomsList', { error: 'Room title already exists.' });
 				} else {
-					Room.create({ 
+					Room.create({
 						title: title
 					}, function(err, newRoom){
 						if(err) throw err;
@@ -58,11 +58,11 @@ var ioEvents = function(io) {
 
 						Room.getUsers(newRoom, socket, function(err, users, cuntUserInRoom){
 							if(err) throw err;
-							
+
 							// Return list of all user connected to the room to the current user
 							socket.emit('updateUsersList', users, true);
 
-							// Return the current user to other connecting sockets in the room 
+							// Return the current user to other connecting sockets in the room
 							// ONLY if the user wasn't connected already to the current room
 							if(cuntUserInRoom === 1){
 								socket.broadcast.to(newRoom.id).emit('updateUsersList', users[users.length - 1]);
@@ -81,7 +81,7 @@ var ioEvents = function(io) {
 				return;
 			}
 
-			// Find the room to which the socket is connected to, 
+			// Find the room to which the socket is connected to,
 			// and remove the current user + socket from this room
 			Room.removeUser(socket, function(err, room, userId, cuntUserInRoom){
 				if(err) throw err;
@@ -103,7 +103,7 @@ var ioEvents = function(io) {
 			// No need to emit 'addMessage' to the current socket
 			// As the new message will be added manually in 'main.js' file
 			// socket.emit('addMessage', message);
-			
+
 			socket.broadcast.to(roomId).emit('addMessage', message);
 		});
 
